@@ -12,11 +12,10 @@ permalink:          /:year/:month/:day/:title.html
 
 # Markdown
 markdown:           kramdown
-
 # Navigation
 nav:
-  - name:           "About"
-    href:           "//about"
+  - name:           "about"
+    href:           "/about/"
   - name:           "Download"
     href:           "//github.com/gfjaru/Kiko/releases"
 
