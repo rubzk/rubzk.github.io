@@ -2,9 +2,9 @@
 title: Creating Spotify Playlist with Machine Learning
 ---
 
-Have you ever wondered how companies or Apps do to recommend moderately successful content to what we are consuming?
+# Have you ever wondered how companies or Apps do to recommend moderately successful content to what we are consuming?
 
-![img](https://medium.com/@tomas.ertola/creando-listas-de-spotify-con-machine-learning-7d3f36a11adf)
+![img](https://miro.medium.com/max/681/1*-pEHTlOdX_7mlvzk3UUHPQ.png)
 
 When I asked myself this question I thought that obviously they must have a lot of information about their products such as Mercado Libre or Amazon: Product categories, weight, our purchase and search history, which product is usually bought together with another and so we can continue thinking of variables that could help recommend a product to a potential buyer.
 
@@ -16,11 +16,11 @@ Researching their official API, I found that they offer a request in which one c
 
 ---
 
-Having found this functionality, the following occurred to me: use an unsupervised algorithm so that with all my lists, it generates different clusters according to the features of the API.
+_Having found this functionality, I got an idea: use an __unsupervised__ algorithm to cluster all my songs according to the audio features of the API._
 
 ## First Step: Creating Keys to Access the API
 
-We start first with everything that would be the configuration to use the API. We go to the official website of the API and go to the dashboard section where it will ask us to register as developers. They register and right there we go to the option "Create an App"
+We start first with everything that would be the configuration to use the API. [We go to the official website of the API](https://developer.spotify.com/documentation/web-api/) and go to the dashboard section where it will ask us to register as developers. They register and right there we go to the option __*"Create an App"*__
 
 ![img](https://miro.medium.com/max/894/1*Prkvi8VQTZL9Jh48mmYgAg.png)
 
@@ -34,7 +34,7 @@ Once the App has been created, it will redirect us to the Dashboard where we can
 
 The reason why we leave them outside the notebook is to be able to share it without the risk of someone using our credentials for something malicious.
 
-Important note: We will be using the Python Spotipy library that facilitates the handling of the API.
+__*Important note:*__  _We will be using the Python Spotipy library that facilitates the handling of the API._
 
 We then begin by importing the libraries and loading the credentials into the notebook.
 
@@ -45,21 +45,23 @@ import credentials
 from tqdm import tqdm_notebook as tqdm
 from spotipy.oauth2 import SpotifyClientCredentials, SpotifyOAuth
 import pandas as pd
-client_credentials_manager = SpotifyClientCredentials(client_id=credentials.client_id,
-                                                      client_secret=credentials.client_secret)
+client_credentials_manager = SpotifyClientCredentials(
+                    client_id=credentials.client_id,
+                    client_secret=credentials.client_secret
+                    )
 
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 {% endhighlight %}
 
 
-## Second Step: Extract the data from the API and process it:
+## Second Step: Extract the data from the API and process it.
 
-Once we have the credentials loaded in the jupyter notebook, we can start making basic queries to see the API responses.
+Once we have the credentials loaded in the jupyter notebook, we can start making basic requests to see the API responses.
 
-First I thought that to extract all my songs I would have to be able to extract all my playlists. The get_user_playlist () function just allows us to bring all our playlists, with many specifications of each one.
+First I thought that to extract all my songs, I would have to be able to extract all my playlists. The `get_user_playlist()` function just allows us to bring all our playlists, with many specifications of each one.
 
-Clarification: As you can see, I will show only the first result because if I paste the entire result the post would be eternal.
+__*Observation:*__  _I will show only the first result because if I paste the entire result the post would be eternal._
 
 {% highlight js %}
 sp.user_playlists('11101312700')['items'][0]
@@ -67,7 +69,7 @@ sp.user_playlists('11101312700')['items'][0]
 
 ![img](https://miro.medium.com/max/1400/1*yNhW5Sugcrm8wO8t38VpqQ.png)
 
-As we can see, the API provides us with the details of each list that my user has, the most important data we need is the id to later use it in conjunction with the get_playlists_tracks () function
+As we can see, the API provides us with the details of each list that my user has. The most important data we need is the id to later use it in conjunction with the `get_playlists_tracks()` function.
 
 {% highlight js %}
 sp.playlist_tracks('39ATQymddYN7NyYh9o1wJt')['items'][0]
@@ -75,7 +77,7 @@ sp.playlist_tracks('39ATQymddYN7NyYh9o1wJt')['items'][0]
 
 ![img](https://miro.medium.com/max/1400/1*7WV-PrCVdfcAhbvKlkvx3w.png)
 
-As a result, it returns all the tracks that the list has with all the information on each one. The most important thing would be missing ... the audio features that I mentioned so much above and to achieve each of them there is a function called audio_features()
+As a result, it returns all the tracks that the list has with all the information on each one. The most important thing would be missing ... the __*audio features*__ that I mentioned so much before and to achieve each of them there is a function called `audio_features()`
 
 {% highlight js %}
 sp.audio_features('2kmX8QNMLg72Vy9Ux6mdmi')
@@ -88,7 +90,6 @@ Using these three functions I created two functions that allow me to extract all
 {% highlight js %}
 def get_all_data(user_id):
     
-    #get all the playlist id's
     
     track_list = []
     sname_list = []
@@ -135,37 +136,37 @@ The result returns a Data Frame like this:
 
 ## Third Step: Data Clusterization
 
-As a name at the beginning of the post, my idea was to use an unsupervised algorithm but what is this?
+<p class="lead">My idea was to use an unsupervised algorithm but what is this?</p>
 
-Unsupervised learning is a technique used in machine learning where the algorithm draws on our data set and the selected features to be able to cluster (divide into segments) according to some pattern found in the data. It is nourished by “unlabeled” data, that is to say that in this case we are not trying to make the algorithm predict something but rather to make it explore by itself.
+> Unsupervised learning is a technique used in __*machine learning*__ where the algorithm draws on our data set and the selected features to be able to __*cluster*__ (divide into segments) according to some pattern found in the data. It is nourished by “unlabeled” data, that is to say that in this case we are not trying to make the algorithm predict something but rather to make it explore by itself.
 
 ![img](https://miro.medium.com/max/1192/1*CSPfuqAIzu__DCNhuRw_DA.png)
 
 
-One of the best known unsupervised algorithms is K-means, which is the one we will use in this post. But before continuing with the algorithm process, I want to explain the features that I chose for this clustering.
+One of the best known unsupervised algorithms is __*K-means*__, which is the one we will use in this post. But before continuing with the algorithm process, I want to explain the features that I chose for this clustering.
 
 {% highlight js %}
 features = ['danceability','energy','acousticness'
            ,'instrumentalness','valence']
 {% endhighlight %}
 
-danceability: Describes how suitable a track is for dance based on a combination of musical elements including tempo, rhythm stability, beat strength, and general regularity. A value of 0.0 is less danceable and 1.0 is more danceable.
+__*danceability:*__ Describes how suitable a track is for dance based on a combination of musical elements including tempo, rhythm stability, beat strength, and general regularity. A value of 0.0 is less danceable and 1.0 is more danceable.
 
-energy: It is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Energetic tracks generally feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude has low scores on the scale. Perceptual characteristics that contribute to this attribute include dynamic range, perceived loudness, timbre, onset frequency, and overall entropy.
+__*energy:*__ It is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Energetic tracks generally feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude has low scores on the scale. Perceptual characteristics that contribute to this attribute include dynamic range, perceived loudness, timbre, onset frequency, and overall entropy.
 
-acousticness: A 0.0 to 1.0 confidence measure of whether the track is acoustic. 1.0 represents high confidence that the track is acoustic.
+__*acousticness:*__ A 0.0 to 1.0 confidence measure of whether the track is acoustic. 1.0 represents high confidence that the track is acoustic.
 
-instrumentalness: Predicts if a track does not contain voices. The sounds "Ooh" and "aah" are treated as instrumental in this context. The rap tracks or spoken words are clearly "vocal". The closer the instrumentality value is to 1.0, the greater the probability that the track contains no vocal content. Values greater than 0.5 are intended to represent instrumental tracks, but the confidence is higher as the value approaches 1.0.
+__*instrumentalness:*__ Predicts if a track does not contain voices. The sounds "Ooh" and "aah" are treated as instrumental in this context. The rap tracks or spoken words are clearly "vocal". The closer the instrumentality value is to 1.0, the greater the probability that the track contains no vocal content. Values greater than 0.5 are intended to represent instrumental tracks, but the confidence is higher as the value approaches 1.0.
 
-valence: A measure from 0.0 to 1.0 that describes the musical positivity conveyed by a track. Tracks with a high valence sound more positive (eg happy, joyous, euphoric), while tracks with low valence sound more negative (eg sad, depressed, angry).
+__*valence:*__ A measure from 0.0 to 1.0 that describes the musical positivity conveyed by a track. Tracks with a high valence sound more positive (eg happy, joyous, euphoric), while tracks with low valence sound more negative (eg sad, depressed, angry).
 
-Note: I recommend visiting the documentation where all the features are found with an even better explanation.
+__*Note:*__ [_I recommend visiting the documentation where all the features are found with an even better explanation._](https://developer.spotify.com/documentation/web-api/reference/tracks/get-several-audio-features/)
 
 ![img](https://miro.medium.com/max/1400/1*qr_BMOhmLslbWL_MyCJvbA.png)
 
-Once the features have been explained, we will induce ourselves in the training of the algorithm. A disadvantage that k-means has is that it will cluster the data in the number of clusters that you want, regardless of whether this amount is not optimal for the problem.
+Once the features have been explained, we will induce ourselves in the training of the algorithm. A disadvantage that k-means has is that it will cluster the data in the number of clusters that you want, __*regardless of whether this amount is not optimal for the problem.*__
 
-One way to solve this and have an estimate of what our optimal quantity would be is by using the Elbow Method. Which basically consists of iterating in a number of clusters, say from 1 to 10 and in each one calculating the SSE (Sum of Squared Errors). Looking at the visualization of this iteration we should choose the number of clusters that has the lowest SSE.
+One way to solve this and have an estimate of what our optimal quantity would be is by using the __*Elbow Method*__. Which basically consists of iterating in a number of clusters, say from 1 to 10 and in each one calculating the SSE (Sum of Squared Errors). Looking at the visualization of this iteration we should choose the number of clusters that has the lowest SSE.
 
 ![img](https://miro.medium.com/max/790/1*xBrHScNV7wimsOPgg1L8Dg.png)
 
@@ -173,25 +174,29 @@ In our case we observe that from the range of 4 to 6 our ideal cluster is found 
 
 ![img](https://miro.medium.com/max/1400/1*VLbim6qpidRuBWZhHfYpLg.png)
 
-We can observe in a visual way how the clustering of the songs resulted. Now we want to know, what criteria did the algorithm use for each one? and What is the difference one from the other? To corroborate this, we are going to plot the characteristics of each cluster in a polar chart.
+We can observe in a visual way how the clustering of the songs resulted. Now we want to know, what criteria did the algorithm use for each one? and What is the difference one from the other? To corroborate this, we are going to plot the characteristics of each cluster in a __*polar chart.*__
 
 ![img](https://miro.medium.com/max/1400/1*YIJrgWtE6XbpiESxOblAeA.png)
 
-With the polar chart we obtain a much more visual graph to be able to understand which pattern the algorithm chose for each cluster. We quickly observe that for example cluster number 1 is the one with the greatest instrumentalness, therefore the songs in this cluster do not have a lot of lyrics. On the other hand, we observe that cluster three has a greater range of acousticness, therefore the songs that make up it will be mostly acoustic.
+With the polar chart we obtain a much more visual plot to be able to understand which pattern the algorithm chose for each cluster. We quickly observe that for example cluster number 1 is the one __*with the greatest instrumentalness,*__ therefore the songs in this cluster do not have a lot of lyrics. On the other hand, we observe that cluster three __*has a greater range of acousticness,*__ therefore the songs that make up it will be mostly acoustic.
 
 ![img](https://miro.medium.com/max/1256/1*C0Cf-LwM7lOH04H_4cGb2g.png)
 
-These two clusters at first glance in the previous graph seem to have a lot in common, the reality is that comparing them we see that cluster 0 has greater valence and a minimal increase in energy and danceability. At practice time, the songs on both playlists may seem to have a lot in common.
+These two clusters at first glance in the previous graph seem to have a lot in common, the reality is that comparing them we see that __*cluster 0 has greater valence*__ and a minimal increase in energy and danceability. At practice time, the songs on both playlists may seem to have a lot in common.
 
-As a final conclusion of this post, we can begin to understand how Spotify creates its lists at a very basic level, obviously its recommendations have a deeper level of analysis and code, but to be something that we put together in a short time, the result is quite good for me. opinion and you can see the patterns in the lists we generate.
+---
+
+<p class="lead">As a final conclusion of this post, we can begin to understand how Spotify creates its lists at a very basic level, obviously its recommendations have a deeper level of analysis and code, but to be something that we put together in a short time, the result is quite good for me. opinion and you can see the patterns in the lists we generate. </p>
 
 
-I leave the links to the playlist for you to try and give your own verdict.
+**I leave the links to the playlist for you to try and give your own verdict.**
 
-Cluster 0
-Cluster 1
-Cluster 2
-Cluster 3
-Finally I leave the link to the repository in case you want to see the complete code.
+[Cluster 0](https://open.spotify.com/playlist/4ludJ86aIyt11kXCF81C49?si=7Vkgi49BSSWA-HIAGEqqzQ)
 
-From [the project's readme](https://github.com/jekyll/jekyll/blob/master/README.markdown):
+[Cluster 1](https://open.spotify.com/playlist/54XX5WNijK2LVNNupCi8Kp?si=3EteH5GGQvKzPQNnYZMMug)
+
+[Cluster 2](https://open.spotify.com/playlist/4LdTX6IVtQcqGQmp0XPy5C?si=y_Zp6_4XSpCUKXZjLT34Zg)
+
+[Cluster 3](https://open.spotify.com/playlist/4ZE5nTjZCa2fWbZU2ogCjS?si=AsuuRlAsRtmUdClYx1pQHA)
+
+Finally I leave the [link to the repository](https://github.com/rubzk/spotify-data-analysis) in case you want to see the complete code.
