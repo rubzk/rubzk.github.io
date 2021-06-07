@@ -3,7 +3,7 @@
 # # # # # # # #
 
 # Basic
-name:               "tom.ertola"
+name:               "pythom"
 
 # URL
 baseurl:            ""
@@ -16,8 +16,12 @@ markdown:           kramdown
 nav:
   - name:           "about"
     href:           "/about/"
-  - name:           "Download"
-    href:           "//github.com/gfjaru/Kiko/releases"
+  - name:           "github"
+    href:           "//github.com/rubzk"
+  - name:           "twitter"
+    href:           "//twitter.com/rubiozk1"
+  - name:           "linkedin"
+    href:           "//linkedin.com/in/tomas-ertola/"
 
 # Sass
 sass:
