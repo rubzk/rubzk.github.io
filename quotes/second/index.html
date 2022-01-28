@@ -14,7 +14,7 @@
 		 
 		 
 		 
-		 <link rel="stylesheet" href="/css/main.min.1c36682bf21f084fa75b7eae9c481a66b891af765479efa74ca67648d520363b.css" integrity="sha256-HDZoK/IfCE+nW36unEgaZriRr3ZUee+nTKZ2SNUgNjs=">
+		 <link rel="stylesheet" href="/css/main.min.f9166fd222c861c823c92538551f19a6405c25a03451d30e835b99ff1a951344.css" integrity="sha256-+RZv0iLIYcgjySU4VR8ZpkBcJaA0UdMOg1uZ/xqVE0Q=">
 		 
 
 		
@@ -34,14 +34,42 @@
 					<span class="text-white font-bold"> rubz.dev </span>
 				</a>
 			</div>
-			<div class="flex space-x-4 m-2 text-white font-semibold">
+			<div class="hidden md:flex  space-x-4 m-2 text-white font-semibold">
 
 				<a class="hover:bg-white hover:text-black" href="/about">about</a>
 				<a class="hover:bg-white hover:text-black" href="/posts">posts</a>
 				<a class="hover:bg-white hover:text-black" href="/projects">projects</a>
 			</div>
+
+			<div class="md:hidden text-white flex ">
+				<button class="mobile-menu-btn">
+
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+						stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+					</svg>
+
+				</button>
+			</div>
+
+
+		</div>
+		<div class="mobile-menu hidden text-white flex-col font-bold">
+			<a class="block py-4  hover:text-gray-500 " href="/about">about</a>
+			<a class="block py-4  hover:text-gray-500" href="/blog">blog</a>
+
 		</div>
 		<div>
+
+			<script>
+				const btn = document.querySelector('button.mobile-menu-btn');
+				const menu = document.querySelector('.mobile-menu')
+
+
+				btn.addEventListener('click', () => {
+					menu.classList.toggle('hidden');
+				});
+			</script>
 </nav><main>
 <div class="flex flex-row min-h-screen justify-center py-16">
 	<article>
