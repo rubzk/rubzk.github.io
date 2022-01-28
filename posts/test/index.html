@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html><head>
+         <meta charset="utf-8">
+		 <meta name="viewport" content="width=device.width, initial-scale=1">
+		 
+		 <title> rubz.dev </title>
+		 
+		 <link rel="preconnect" href="https://fonts.googleapis.com">
+		 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+		 
+		  
+		 
+		 
+		 
+		 
+		 <link rel="stylesheet" href="/css/main.min.60b95aaf02f62bceb9a15099489c566b5c106375ef9b57616eed67d515a3373e.css" integrity="sha256-YLlarwL2K865oVCZSJxWa1wQY3Xvm1dhbu1n1RWjNz4=">
+		 
+
+		
+  </head>
+
+<body>
+	<div class="main"><nav class="bg-black border-b-2 fixed inset-x-0 top-0">
+	<div class="px-8 mx-10-xl sm:mx-10">
+		<div class="flex justify-between">
+			<div class="flex space-x-4 m-2">
+				<a href="/" class="flex items-center">
+					<svg class=" text-white h-6 w-6 md:h-6 md:w-6 mr-2" xmlns="http://www.w3.org/2000/svg"
+						class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+					</svg>
+					<span class="text-white font-bold"> rubz.dev </span>
+				</a>
+			</div>
+			<div class="hidden md:flex  space-x-4 m-2 text-white font-semibold">
+
+				<a class="hover:bg-white hover:text-black" href="/about">about</a>
+				<a class="hover:bg-white hover:text-black" href="/posts">posts</a>
+				<a class="hover:bg-white hover:text-black" href="/projects">projects</a>
+			</div>
+
+			<div class="md:hidden text-white flex ">
+				<button class="mobile-menu-btn">
+
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+						stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+					</svg>
+
+				</button>
+			</div>
+
+
+		</div>
+		<div class="mobile-menu hidden text-white flex-col font-bold">
+			<a class="block py-4  hover:text-gray-500 " href="/about">about</a>
+			<a class="block py-4  hover:text-gray-500" href="/posts">posts</a>
+
+		</div>
+		<div>
+
+			<script>
+				const btn = document.querySelector('button.mobile-menu-btn');
+				const menu = document.querySelector('.mobile-menu')
+
+
+				btn.addEventListener('click', () => {
+					menu.classList.toggle('hidden');
+				});
+			</script>
+</nav><main>
+<div class="flex flex-row  h-full justify-center w-full">
+
+	<div class="flex flex-col items-center w-2/3">
+
+		<header class="text-black pt-16 pb-24 w-3/4">
+			<div>
+				<div class="py-2">
+					<span class="bg-black md:text-2xl text-white font-semibold p-1">
+						January 29,2022</span>
+
+				</div>
+				<h1 class="text-2xl md:text-6xl font-bold"> Creating machine learning playlist with spotify </h1>
+				<div class="flex flex-row pt-4">
+					<p class="text-xs mr-4 md:text-xl">
+						tags: programming
+					</p>
+					<p class="text-xs mr-4 md:text-xl">
+						Reading time: 8m
+					</p>
+				</div>
+
+				<div class="flex justify-center py-10">
+					<article class="prose-sm lg:prose-xl w-full">
+						<h2 id="have-you-ever-wondered-how-companies-or-apps-do-to-recommend-moderately-successful-content-to-what-we-are-consuming">Have you ever wondered how companies or Apps do to recommend moderately successful content to what we are consuming?</h2>
+<p>When I asked myself this question I thought that obviously they must have a lot of information about their products such as Mercado Libre or Amazon: Product categories, weight, our purchase and search history, which product is usually bought together with another and so we can continue thinking of variables that could help recommend a product to a potential buyer.</p>
+<p>But then I changed the focus of my thinking towards more intangible products such as music. Although music could be acquired in a tangible way in the form of CDs, we all know that today the music business does not work that way if not digitally. Several companies have emerged from this new business model and one of them is Spotify, which I think does not need to present it due to its wide popularity. Now going back to my previous thought, Spotify not only has our searches, playlists and most listened songs to be able to recommend new music to us, but it can also afford to perform an analysis of the music to find more features that lead to a better recommendation.</p>
+<p>Researching their official API, I found that they offer a request in which one can get the audio features of a song. There are several features that we obtain and they range from how instrumental the song is, how danceable, how energetic and among many more. I recommend that you enter yourself and see the large number of options that the API offers.</p>
+<p><em>Having found this functionality, I got an idea: use an <strong>unsupervised</strong> algorithm to cluster all my songs according to the audio features of the API.</em></p>
+<h2 id="first-step-creating-keys-to-access-the-api">First Step: Creating Keys to Access the API</h2>
+<p>We start first with everything that would be the configuration to use the API. <a href="https://developer.spotify.com/documentation/web-api/">We go to the official website of the API</a> and go to the dashboard section where it will ask us to register as developers. They register and right there we go to the option <strong><em>&ldquo;Create an App&rdquo;</em></strong></p>
+<p>It will ask us for a name, a description and to accept the terms and conditions.</p>
+<p>Once the App has been created, it will redirect us to the Dashboard where we can see the credentials of the API, which is what matters most to us. We copy them and within our repository we create a python-type file where we are going to paste them.</p>
+<p>The reason why we leave them outside the notebook is to be able to share it without the risk of someone using our credentials for something malicious.</p>
+<p><strong><em>Important note:</em></strong>  <em>We will be using the Python Spotipy library that facilitates the handling of the API.</em></p>
+<p>We then begin by importing the libraries and loading the credentials into the notebook.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#f92672">import</span> spotipy
+<span style="color:#f92672">import</span> credentials
+<span style="color:#f92672">from</span> tqdm <span style="color:#f92672">import</span> tqdm_notebook <span style="color:#66d9ef">as</span> tqdm
+<span style="color:#f92672">from</span> spotipy.oauth2 <span style="color:#f92672">import</span> SpotifyClientCredentials, SpotifyOAuth
+<span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+client_credentials_manager <span style="color:#f92672">=</span> SpotifyClientCredentials(
+                    client_id<span style="color:#f92672">=</span>credentials<span style="color:#f92672">.</span>client_id,
+                    client_secret<span style="color:#f92672">=</span>credentials<span style="color:#f92672">.</span>client_secret
+                    )
+
+sp <span style="color:#f92672">=</span> spotipy<span style="color:#f92672">.</span>Spotify(client_credentials_manager<span style="color:#f92672">=</span>client_credentials_manager)
+
+</code></pre></div><h2 id="second-step-extract-the-data-from-the-api-and-process-it">Second Step: Extract the data from the API and process it.</h2>
+<p>Once we have the credentials loaded in the jupyter notebook, we can start making basic requests to see the API responses.</p>
+<p>First I thought that to extract all my songs, I would have to be able to extract all my playlists. The <code>get_user_playlist()</code> function just allows us to bring all our playlists, with many specifications of each one.</p>
+<p><strong><em>Observation:</em></strong>  <em>I will show only the first result because if I paste the entire result the post would be eternal.</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sp<span style="color:#f92672">.</span>user_playlists(<span style="color:#e6db74">&#39;11101312700&#39;</span>)[<span style="color:#e6db74">&#39;items&#39;</span>][<span style="color:#ae81ff">0</span>]
+</code></pre></div><p>As we can see, the API provides us with the details of each list that my user has. The most important data we need is the id to later use it in conjunction with the <code>get_playlists_tracks()</code> function.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sp<span style="color:#f92672">.</span>playlist_tracks(<span style="color:#e6db74">&#39;39ATQymddYN7NyYh9o1wJt&#39;</span>)[<span style="color:#e6db74">&#39;items&#39;</span>][<span style="color:#ae81ff">0</span>]
+</code></pre></div><p>As a result, it returns all the tracks that the list has with all the information on each one. The most important thing would be missing &hellip; the <strong><em>audio features</em></strong> that I mentioned so much before and to achieve each of them there is a function called <code>audio_features()</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sp<span style="color:#f92672">.</span>audio_features(<span style="color:#e6db74">&#39;2kmX8QNMLg72Vy9Ux6mdmi&#39;</span>)
+</code></pre></div><p>Using these three functions I created two functions that allow me to extract all the songs from my playlists and also concatenate the audio features of each one.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_all_data</span>(user_id):
+    
+    
+    track_list <span style="color:#f92672">=</span> []
+    sname_list <span style="color:#f92672">=</span> []
+    artist_list <span style="color:#f92672">=</span> []
+    audio_ft <span style="color:#f92672">=</span> []
+    
+        
+    <span style="color:#66d9ef">for</span> playlist <span style="color:#f92672">in</span> tqdm(sp<span style="color:#f92672">.</span>user_playlists(user_id)[<span style="color:#e6db74">&#39;items&#39;</span>]):
+            <span style="color:#66d9ef">for</span> idx,track <span style="color:#f92672">in</span> enumerate(sp<span style="color:#f92672">.</span>playlist_tracks(playlist[<span style="color:#e6db74">&#39;id&#39;</span>])[<span style="color:#e6db74">&#39;items&#39;</span>]):
+                <span style="color:#66d9ef">if</span> track[<span style="color:#e6db74">&#39;track&#39;</span>][<span style="color:#e6db74">&#39;id&#39;</span>] <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+                    
+                    track_list<span style="color:#f92672">.</span>append(track[<span style="color:#e6db74">&#39;track&#39;</span>][<span style="color:#e6db74">&#39;id&#39;</span>])
+                    sname_list<span style="color:#f92672">.</span>append(track[<span style="color:#e6db74">&#39;track&#39;</span>][<span style="color:#e6db74">&#39;name&#39;</span>])
+                    artist_list<span style="color:#f92672">.</span>append(track[<span style="color:#e6db74">&#39;track&#39;</span>][<span style="color:#e6db74">&#39;album&#39;</span>][<span style="color:#e6db74">&#39;artists&#39;</span>][<span style="color:#ae81ff">0</span>])
+                    <span style="color:#75715e">#print(track[&#39;track&#39;][&#39;id&#39;])</span>
+                    audio_ft<span style="color:#f92672">.</span>append(sp<span style="color:#f92672">.</span>audio_features(track[<span style="color:#e6db74">&#39;track&#39;</span>][<span style="color:#e6db74">&#39;id&#39;</span>])[<span style="color:#ae81ff">0</span>])
+    
+    df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;name&#39;</span>: sname_list,
+                       <span style="color:#e6db74">&#39;artist&#39;</span>: artist_list,
+                       <span style="color:#e6db74">&#39;id&#39;</span>: track_list,
+                       <span style="color:#e6db74">&#39;audio_ft&#39;</span>: audio_ft})
+    
+    <span style="color:#66d9ef">return</span> df
+</code></pre></div><p>And in the following function it is just a slight transformation where we drop columns that are irrelevant to the analysis.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">transform_data</span>(df):
+    
+    df[<span style="color:#e6db74">&#39;artist&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;artist&#39;</span>]<span style="color:#f92672">.</span>apply(pd<span style="color:#f92672">.</span>Series)[<span style="color:#e6db74">&#39;name&#39;</span>]
+    
+    df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([df,df[<span style="color:#e6db74">&#39;audio_ft&#39;</span>]<span style="color:#f92672">.</span>apply(pd<span style="color:#f92672">.</span>Series)], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    
+    df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>drop(labels<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;time_signature&#39;</span>,<span style="color:#e6db74">&#39;duration_ms&#39;</span>,<span style="color:#e6db74">&#39;analysis_url&#39;</span>,<span style="color:#e6db74">&#39;track_href&#39;</span>,<span style="color:#e6db74">&#39;type&#39;</span>,<span style="color:#e6db74">&#39;audio_ft&#39;</span>], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    
+    <span style="color:#66d9ef">return</span> df
+</code></pre></div><p>The result returns a Data Frame like this:</p>
+<h2 id="third-step-data-clusterization">Third Step: Data Clusterization</h2>
+<p>My idea was to use an unsupervised algorithm but what is this?</p>
+<blockquote>
+<p>Unsupervised learning is a technique used in <strong><em>machine learning</em></strong> where the algorithm draws on our data set and the selected features to be able to <strong><em>cluster</em></strong> (divide into segments) according to some pattern found in the data. It is nourished by “unlabeled” data, that is to say that in this case we are not trying to make the algorithm predict something but rather to make it explore by itself.</p>
+</blockquote>
+<p>One of the best known unsupervised algorithms is <strong><em>K-means</em></strong>, which is the one we will use in this post. But before continuing with the algorithm process, I want to explain the features that I chose for this clustering.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">features <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;danceability&#39;</span>,<span style="color:#e6db74">&#39;energy&#39;</span>,<span style="color:#e6db74">&#39;acousticness&#39;</span>
+           ,<span style="color:#e6db74">&#39;instrumentalness&#39;</span>,<span style="color:#e6db74">&#39;valence&#39;</span>]
+</code></pre></div><p><strong><em>danceability:</em></strong> Describes how suitable a track is for dance based on a combination of musical elements including tempo, rhythm stability, beat strength, and general regularity. A value of 0.0 is less danceable and 1.0 is more danceable.</p>
+<p><strong><em>energy:</em></strong> It is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Energetic tracks generally feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude has low scores on the scale. Perceptual characteristics that contribute to this attribute include dynamic range, perceived loudness, timbre, onset frequency, and overall entropy.</p>
+<p><strong><em>acousticness:</em></strong> A 0.0 to 1.0 confidence measure of whether the track is acoustic. 1.0 represents high confidence that the track is acoustic.</p>
+<p><strong><em>instrumentalness:</em></strong> Predicts if a track does not contain voices. The sounds &ldquo;Ooh&rdquo; and &ldquo;aah&rdquo; are treated as instrumental in this context. The rap tracks or spoken words are clearly &ldquo;vocal&rdquo;. The closer the instrumentality value is to 1.0, the greater the probability that the track contains no vocal content. Values greater than 0.5 are intended to represent instrumental tracks, but the confidence is higher as the value approaches 1.0.</p>
+<p><strong><em>valence:</em></strong> A measure from 0.0 to 1.0 that describes the musical positivity conveyed by a track. Tracks with a high valence sound more positive (eg happy, joyous, euphoric), while tracks with low valence sound more negative (eg sad, depressed, angry).</p>
+<p><strong><em>Note:</em></strong> <a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-several-audio-features/"><em>I recommend visiting the documentation where all the features are found with an even better explanation.</em></a></p>
+<p>Once the features have been explained, we will induce ourselves in the training of the algorithm. A disadvantage that k-means has is that it will cluster the data in the number of clusters that you want, <strong><em>regardless of whether this amount is not optimal for the problem.</em></strong></p>
+<p>One way to solve this and have an estimate of what our optimal quantity would be is by using the <strong><em>Elbow Method</em></strong>. Which basically consists of iterating in a number of clusters, say from 1 to 10 and in each one calculating the SSE (Sum of Squared Errors). Looking at the visualization of this iteration we should choose the number of clusters that has the lowest SSE.</p>
+<p>In our case we observe that from the range of 4 to 6 our ideal cluster is found with a relatively low SSE and with the least amount of clusters. For this analysis I ended up using four clusters.</p>
+<p>We can observe in a visual way how the clustering of the songs resulted. Now we want to know, what criteria did the algorithm use for each one? and What is the difference one from the other? To corroborate this, we are going to plot the characteristics of each cluster in a <strong><em>polar chart.</em></strong></p>
+<p>With the polar chart we obtain a much more visual plot to be able to understand which pattern the algorithm chose for each cluster. We quickly observe that for example cluster number 1 is the one <strong><em>with the greatest instrumentalness,</em></strong> therefore the songs in this cluster do not have a lot of lyrics. On the other hand, we observe that cluster three <strong><em>has a greater range of acousticness,</em></strong> therefore the songs that make up it will be mostly acoustic.</p>
+<p><img src="https://miro.medium.com/max/1256/1*C0Cf-LwM7lOH04H_4cGb2g.png" alt="img"></p>
+<p>These two clusters at first glance in the previous graph seem to have a lot in common, the reality is that comparing them we see that <strong><em>cluster 0 has greater valence</em></strong> and a minimal increase in energy and danceability. At practice time, the songs on both playlists may seem to have a lot in common.</p>
+<hr>
+<p>As a final conclusion of this post, we can begin to understand how Spotify creates its lists at a very basic level, obviously its recommendations have a deeper level of analysis and code, but to be something that we put together in a short time, the result is quite good for me. opinion and you can see the patterns in the lists we generate.</p>
+<p><strong>I leave the links to the playlist for you to try and give your own verdict.</strong></p>
+<p><a href="https://open.spotify.com/playlist/4ludJ86aIyt11kXCF81C49?si=7Vkgi49BSSWA-HIAGEqqzQ">Cluster 0</a></p>
+<p><a href="https://open.spotify.com/playlist/54XX5WNijK2LVNNupCi8Kp?si=3EteH5GGQvKzPQNnYZMMug">Cluster 1</a></p>
+<p><a href="https://open.spotify.com/playlist/4LdTX6IVtQcqGQmp0XPy5C?si=y_Zp6_4XSpCUKXZjLT34Zg">Cluster 2</a></p>
+<p><a href="https://open.spotify.com/playlist/4ZE5nTjZCa2fWbZU2ogCjS?si=AsuuRlAsRtmUdClYx1pQHA">Cluster 3</a></p>
+<p>Finally I leave the <a href="https://github.com/rubzk/spotify-data-analysis">link to the repository</a> in case you want to see the complete code.</p>
+
+					</article>
+				</div>
+
+
+			</div>
+
+		</header>
+
+
+
+
+	</div>
+
+
+</div>
+
+		</main>
+
+	</div>
+</body><footer class="py-6  inset-x-0 bottom-0 flex justify-center text-white p-15 bg-black">
+	<div class="flex flex-col">
+
+		<div>
+
+			<span class="bg-white text-black font-bold p-2">copyright 2022 rubz. </span>
+
+		</div>
+
+
+
+		<div class="flex flex-row justify-between my-4">
+
+			<a href="mailto:tomas.ertola@gmail.com" target="_blank">
+
+				<svg class="h5 w-5 mr-4 transform transition-all hover:text-gray-500" fill="currentColor"
+					xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+					<path
+						d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-80.8 108.9L531.7 514.4c-7.8 6.1-18.7 6.1-26.5 0L189.6 268.9A7.2 7.2 0 0 1 194 256h648.8a7.2 7.2 0 0 1 4.4 12.9z" />
+				</svg>
+
+			</a>
+
+			<a href="https://twitter.com/theworldisdata" target="_blank">
+
+				<svg class="h5 w-5 mr-4 transform transition-all hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24" fill="currentColor">
+					<path
+						d="M23.643 4.937c-.835.37-1.732.62-2.675.733a4.67 4.67 0 0 0 2.048-2.578a9.3 9.3 0 0 1-2.958 1.13a4.66 4.66 0 0 0-7.938 4.25a13.229 13.229 0 0 1-9.602-4.868c-.4.69-.63 1.49-.63 2.342A4.66 4.66 0 0 0 3.96 9.824a4.647 4.647 0 0 1-2.11-.583v.06a4.66 4.66 0 0 0 3.737 4.568a4.692 4.692 0 0 1-2.104.08a4.661 4.661 0 0 0 4.352 3.234a9.348 9.348 0 0 1-5.786 1.995a9.5 9.5 0 0 1-1.112-.065a13.175 13.175 0 0 0 7.14 2.093c8.57 0 13.255-7.098 13.255-13.254c0-.2-.005-.402-.014-.602a9.47 9.47 0 0 0 2.323-2.41l.002-.003z" />
+				</svg>
+			</a>
+
+
+			<a href="https://www.linkedin.com/in/tomas-ertola/" target="_blank">
+
+				<svg class="h5 w-5 mr-4 transform transition-all hover:text-gray-500" fill="currentColor"
+					xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+					<path
+						d="M196.064.25C88.347.25.187 88.408.187 196.127v607.841c0 107.717 88.158 195.845 195.877 195.845h607.841c107.718 0 195.845-88.127 195.845-195.845V196.127C999.75 88.41 911.623.25 803.905.25H196.064zm49.266 164.948c51.648 0 83.461 33.906 84.443 78.475c0 43.585-32.797 78.444-85.442 78.444h-.969c-50.665 0-83.412-34.857-83.412-78.444c0-44.568 33.738-78.475 85.379-78.475zm445.08 208.31c99.329 0 173.79 64.922 173.79 204.436v260.449H713.247V595.406c0-61.06-21.847-102.718-76.476-102.718c-41.704 0-66.562 28.078-77.476 55.202c-3.987 9.704-4.967 23.257-4.967 36.832v253.671H403.375s1.981-411.613 0-454.233h150.984v64.324c20.06-30.95 55.942-74.977 136.051-74.977zm-521.556 10.685h150.953v454.202H168.854V384.193z">
+				</svg>
+
+
+			</a>
+
+		</div>
+
+	</div>
+
+</footer></html>

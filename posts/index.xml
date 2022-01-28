@@ -6,7 +6,16 @@
     <description>Recent content in Posts on rubz.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Nov 2021 19:21:50 +0100</lastBuildDate><atom:link href="http://rubzk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Jan 2022 00:19:32 +0100</lastBuildDate><atom:link href="http://rubzk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating machine learning playlist with spotify</title>
+      <link>http://rubzk.github.io/posts/test/</link>
+      <pubDate>Sat, 29 Jan 2022 00:19:32 +0100</pubDate>
+      
+      <guid>http://rubzk.github.io/posts/test/</guid>
+      <description>Have you ever wondered how companies or Apps do to recommend moderately successful content to what we are consuming? When I asked myself this question I thought that obviously they must have a lot of information about their products such as Mercado Libre or Amazon: Product categories, weight, our purchase and search history, which product is usually bought together with another and so we can continue thinking of variables that could help recommend a product to a potential buyer.</description>
+    </item>
+    
     <item>
       <title>An introduction to csgo python library</title>
       <link>http://rubzk.github.io/posts/first-post/</link>
