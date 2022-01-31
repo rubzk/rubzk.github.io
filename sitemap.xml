@@ -2,30 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://rubzk.github.io/</loc>
-    <lastmod>2022-01-29T00:19:32+01:00</lastmod>
-    <priority>0</priority>
-  </url><url>
-    <loc>http://rubzk.github.io/posts/test/</loc>
-    <lastmod>2022-01-29T00:19:32+01:00</lastmod>
-  </url><url>
-    <loc>http://rubzk.github.io/posts/</loc>
-    <lastmod>2022-01-29T00:19:32+01:00</lastmod>
-  </url><url>
-    <loc>http://rubzk.github.io/tags/programming/</loc>
-    <lastmod>2022-01-29T00:19:32+01:00</lastmod>
-  </url><url>
-    <loc>http://rubzk.github.io/tags/</loc>
-    <lastmod>2022-01-29T00:19:32+01:00</lastmod>
-  </url><url>
-    <loc>http://rubzk.github.io/posts/first-post/</loc>
-    <lastmod>2021-11-16T19:21:50+01:00</lastmod>
-  </url><url>
-    <loc>http://rubzk.github.io/tags/programming-python/</loc>
-    <lastmod>2021-11-16T19:21:50+01:00</lastmod>
-  </url><url>
     <loc>http://rubzk.github.io/opensource/</loc>
     <lastmod>2021-11-15T23:48:53+01:00</lastmod>
+  </url><url>
+    <loc>http://rubzk.github.io/</loc>
+    <lastmod>2021-11-15T20:14:21+01:00</lastmod>
+    <priority>0</priority>
   </url><url>
     <loc>http://rubzk.github.io/categories/</loc>
     <lastmod>2021-11-15T20:14:21+01:00</lastmod>
@@ -45,8 +27,29 @@
     <loc>http://rubzk.github.io/about/</loc>
     <lastmod>2021-11-03T14:12:00+01:00</lastmod>
   </url><url>
+    <loc>http://rubzk.github.io/posts/how-to-get-through-data-analyst-interview/</loc>
+    <lastmod>2021-10-27T00:19:32+01:00</lastmod>
+  </url><url>
+    <loc>http://rubzk.github.io/posts/</loc>
+    <lastmod>2021-10-27T00:19:32+01:00</lastmod>
+  </url><url>
+    <loc>http://rubzk.github.io/tags/programming.-interviews-sql/</loc>
+    <lastmod>2021-10-27T00:19:32+01:00</lastmod>
+  </url><url>
+    <loc>http://rubzk.github.io/tags/</loc>
+    <lastmod>2021-10-27T00:19:32+01:00</lastmod>
+  </url><url>
     <loc>http://rubzk.github.io/posts/testing-the-post-page/</loc>
     <lastmod>2020-08-23T15:20:44-03:00</lastmod>
+  </url><url>
+    <loc>http://rubzk.github.io/tags/programming-python/</loc>
+    <lastmod>2020-08-23T15:20:44-03:00</lastmod>
+  </url><url>
+    <loc>http://rubzk.github.io/posts/intro-to-machine-learning/</loc>
+    <lastmod>2020-06-29T19:21:50+01:00</lastmod>
+  </url><url>
+    <loc>http://rubzk.github.io/tags/programming-python-machine-learning/</loc>
+    <lastmod>2020-06-29T19:21:50+01:00</lastmod>
   </url><url>
     <loc>http://rubzk.github.io/books/</loc>
   </url><url>

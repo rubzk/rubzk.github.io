@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html><head>
+         <meta charset="utf-8">
+		 <meta name="viewport" content="width=device.width, initial-scale=1">
+		 
+		 <title> rubz.dev </title>
+		 
+		 <link rel="preconnect" href="https://fonts.googleapis.com">
+		 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+		 
+		  
+		 
+		 
+		 
+		 
+		 <link rel="stylesheet" href="/css/main.min.e7b3cade7276813746dae8702b7421a3ffa3687c16f8bb4722dd40e557f824fb.css" integrity="sha256-57PK3nJ2gTdG2uhwK3Qho/+jaHwW+LtHIt1A5Vf4JPs=">
+		 
+
+		
+  </head>
+
+<body>
+	<div class="main"><nav class="bg-black border-b-2 fixed inset-x-0 top-0">
+	<div class="px-8 mx-10-xl sm:mx-10">
+		<div class="flex justify-between">
+			<div class="flex space-x-4 m-2">
+				<a href="/" class="flex items-center">
+					<svg class=" text-white h-6 w-6 md:h-6 md:w-6 mr-2" xmlns="http://www.w3.org/2000/svg"
+						class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+					</svg>
+					<span class="text-white font-bold"> rubz.dev </span>
+				</a>
+			</div>
+			<div class="hidden md:flex  space-x-4 m-2 text-white font-semibold">
+
+				<a class="hover:bg-white hover:text-black" href="/about">about</a>
+				<a class="hover:bg-white hover:text-black" href="/posts">posts</a>
+			</div>
+
+			<div class="md:hidden text-white flex ">
+				<button class="mobile-menu-btn">
+
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+						stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+					</svg>
+
+				</button>
+			</div>
+
+
+		</div>
+		<div class="mobile-menu hidden text-white flex-col font-bold">
+			<a class="block py-4  hover:text-gray-500 " href="/about">about</a>
+			<a class="block py-4  hover:text-gray-500" href="/posts">posts</a>
+
+		</div>
+		<div>
+
+			<script>
+				const btn = document.querySelector('button.mobile-menu-btn');
+				const menu = document.querySelector('.mobile-menu')
+
+
+				btn.addEventListener('click', () => {
+					menu.classList.toggle('hidden');
+				});
+			</script>
+</nav><main>
+<div class="flex flex-row  min-h-screen px-4 justify-center">
+
+
+	<div class="flex flex-col w-full justify-center items-center">
+
+		<header class="text-black pt-16 pb-24">
+			<div class="py-2">
+				<span class="bg-black md:text-2xl text-white font-semibold p-1">
+					June 29,2020</span>
+
+			</div>
+			<h1 class="text-2xl md:text-6xl font-bold"> Intro to Machine Learning for begginners </h1>
+			<div class="flex flex-row pt-4">
+				<p class="text-xs mr-4 md:text-xl">
+					tags: programming, python, machine-learning
+				</p>
+				<p class="text-xs mr-4 md:text-xl">
+					Reading time: 9m
+				</p>
+			</div>
+
+		</header>
+
+		<div class="prose prose-lg lg:prose-xl  p-14 md:p-4 w-full">
+			<p>Following advice from leaders in the world of DS (Data Science) in Argentina, I decided to look for an old notebook that I had made to practice and write a short article that may help someone understand what is done in data science or able to introduce someone who has not the slightest idea in basic concepts.</p>
+<h2 id="summary">Summary</h2>
+<p>What we are going to be doing throughout the post is through a dataset (Dataset) provided by one of the kaggle competitions, we are going to first carry out a brief analysis of the information we have and then carry out a predictive model that identifies according to certain variables that the data set has if the person survived or not.</p>
+<p><em><strong>Quick note</strong></em>: <em>Kaggle is one of the best sites to learn data science and machine learning, it has many competitions to practice, free tutorials of many of the practices that are applied and user notebooks giving their point of view on each topic. I highly recommend going in and exploring on your own.</em></p>
+<h2 id="first-step-quick-data-check">First step: Quick data check</h2>
+<p>First things first, kaggle provides us with two datasets: one for training (train.csv) and one for testing (test.csv). What does this mean? When we are developing a predictive model we have to feed our information model so that it learns and then somehow before taking it to production we have to perform a test with other information that is not the one used to train it, more than anything to eliminate possible biases. For this reason, generally when we have a dataset we divide the data before starting to develop the model, this time kaggle provides it directly divided.</p>
+<p>Before starting, we are going to load the python libraries that we are going to be using in the post and a brief explanation of each one.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+<span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+<span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns
+
+</code></pre></div><p><strong>Pandas</strong>: One of the best python libraries, it allows us to import, manipulate and export data such as SQL databases, excel files, json and many more.</p>
+<p><strong>Numpy</strong>: Related to everything that is data structure manipulation and multidimensional arrays that are highly used by Machine Learning models.</p>
+<p><strong>Matplot</strong>: Focused on everything that is data visualization. Within it we can find thousands of configurations and ways to view information.</p>
+<p><strong>Seaborn</strong>: It is a library that is based on Matoplot lib but seeks to facilitate some features and be a little more aesthetic.</p>
+<p>Now if we continue to import the data and with the <code>.head()</code> method we get the first five rows of our data set.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+train <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;train.csv&#39;</span>)
+test <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;test.csv&#39;</span>)
+
+</code></pre></div><p><img src="https://miro.medium.com/max/700/1*fomGyY2hswrKAt4z-CgPwg.png" alt="train_data"></p>
+<p>Once the data is loaded, we can begin to observe what type of columns we have and perform an analysis of them, but first we are going to give a little context of the name of each column.</p>
+<p><strong>PassengerId</strong>: unique passenger ID</p>
+<p><strong>Survived</strong>: Indicates if this passenger survived or not</p>
+<p><strong>pclass</strong>: It is the class of the passenger ticket, we have first, second and third class.</p>
+<p><strong>Name</strong>: Passenger name</p>
+<p><strong>Sex</strong>: Gender of the passenger</p>
+<p><strong>Age</strong>: Age</p>
+<p><strong>sibsp</strong>: This column gives us the sum of siblings/partner of the passenger who are on the ship.</p>
+<p><strong>patch</strong>: This column tells us the sum of parents/children of the passenger who are on the ship.</p>
+<p><strong>ticket</strong>: The ticket number</p>
+<p><strong>fare</strong>: The cost of the ticket paid by the passenger.</p>
+<p><strong>cabin</strong>: passenger cabin number</p>
+<p><strong>embarked</strong>: The port where the passenger embarked, being C: Cherbourg, Q: Queenstown and S: Southampton.</p>
+<h2 id="second-step-breif-analysis-of-the-data">Second step: Breif analysis of the data</h2>
+<p>Having all this clear, we can start to play a little with the data and see what information it can give us.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+plot <span style="color:#f92672">=</span> train<span style="color:#f92672">.</span>groupby([<span style="color:#e6db74">&#39;Sex&#39;</span>, <span style="color:#e6db74">&#39;Survived&#39;</span>])<span style="color:#f92672">.</span>size()<span style="color:#f92672">.</span>reset_index()\
+			<span style="color:#f92672">.</span>pivot(columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Survived&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Sex&#39;</span>, values<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>])
+
+plot<span style="color:#f92672">.</span>plot(kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;bar&#39;</span>, stacked<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+
+</code></pre></div><p><img src="https://miro.medium.com/max/419/1*b5Eu7UVOVAYMoiav_TgtYQ.png" alt="plotstacked"></p>
+<p>In this graph we make a pivot to see according to gender how many of each survived. We observed that there were more female than male survivors.</p>
+<p>Now let&rsquo;s see the number of female survivors per Pclass</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+plot <span style="color:#f92672">=</span> train[train<span style="color:#f92672">.</span>Sex <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;female&#39;</span>]<span style="color:#f92672">.</span>groupby([<span style="color:#e6db74">&#39;Sex&#39;</span>, <span style="color:#e6db74">&#39;Survived&#39;</span>])<span style="color:#f92672">.</span>size()<span style="color:#f92672">.</span>reset_index()\
+								   <span style="color:#f92672">.</span>pivot(columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Survived&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Sex&#39;</span>, values<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>])
+
+plot<span style="color:#f92672">.</span>plot(kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;bar&#39;</span>, stacked<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+
+</code></pre></div><p><img src="https://miro.medium.com/max/395/1*dD24NlBmPj9_Bq6uK-cVmw.png" alt="plotstacked"></p>
+<p>As a result we can see the largest number of women who did not survive are within the lowest class, something that sadly seems logical.</p>
+<p>If we look at the age distribution within the passenger classes and whether or not they survived we see that many young women within the lowest class did not survive</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+
+g <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>FacetGrid(train, col<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Survived&#39;</span>, row<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Pclass&#39;</span>)
+g <span style="color:#f92672">=</span> g<span style="color:#f92672">.</span>map(plt<span style="color:#f92672">.</span>hist, <span style="color:#e6db74">&#39;Age&#39;</span>)
+
+</code></pre></div><p><img src="https://miro.medium.com/max/483/1*udFHCcxhGmFN0wvhtoHQ4w.png" alt="facetgrid"></p>
+<p>Now we wonder that among the survivors there should be children, right? Let&rsquo;s check the age distribution within the male survivors.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+
+g <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>FacetGrid(train[train<span style="color:#f92672">.</span>Sex <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;male&#39;</span>], col<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Pclass&#39;</span>, row<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Survived&#39;</span>)
+g <span style="color:#f92672">=</span> g<span style="color:#f92672">.</span>map(plt<span style="color:#f92672">.</span>hist, <span style="color:#e6db74">&#39;Age&#39;</span>)
+
+</code></pre></div><p><img src="https://miro.medium.com/max/680/1*qlfJn4bGWtVjaoZxgnDGrQ.png" alt="facetgrid"></p>
+<p>Continuing with our theory, we can see how it is reinforced. In the first two social classes the children were mostly rescued but when we get to the lowest social class we can see that there were a number of children who did not survive.</p>
+<p>As a mini conclusion of this small analysis we can say that although we will never know the reality of each of the stories of these people, sometimes the data leaves certain behaviors that we can deduce even if they can never be verified.</p>
+<h2 id="third-step-starting-with-machine-learning">Third step: Starting with Machine Learning</h2>
+<p>First, before entering the explicit code to develop the model, we have to define what kind of problem we want to solve.
+What do I mean by this? Well, in Machine Learning, algorithms are generally intended to solve two types of problems, classification problems and regression problems.</p>
+<p><strong>Classification Problems</strong>: As their name suggests, these problems challenge algorithms to predict, based on certain X variables, a category or a classification. Example: According to weight and color variables, predict the type of fruit.</p>
+<p><strong>Regression Problems:</strong> On the other hand, in these problems according to an input of X variables, what we are looking to predict is a real value such as a number or an amount. Example: Having historical information on sales of a business, predict how many sales I will have in a certain month approximately.</p>
+<p>Now that we understand what each of the problems refers to, we can say that the problem we are trying to solve is a classification problem because, based on the variables that we choose to train the model, we are going to want to predict if this person survived or no.</p>
+<p>Well now moving towards the creation of the model we have to select with which variables we want to train our model. To make a simple model we are going to take variables that we have been working on in data analysis and we have seen that they have quite an impact. We ended up choosing just Pclass, Sex, and Age.
+Now that we have the variables, a.k.a features, that we are going to use in our model, we are going to see if within both data sets we have any missing or null values.</p>
+<p><img src="https://miro.medium.com/max/325/1*odwLr0KUdW0couAFYoY6Yw.png" alt="result"></p>
+<p>Only feature Age has nulls in both data sets, in these cases we have to make a decision to fill these values.</p>
+<p><em><strong>Could we just drop these values and do the training without them?</strong></em></p>
+<p>The answer in this case is <strong>NO</strong>, the training data set has 177 nulls out of a total of 891 records, resulting in almost 20% of the total records. It is not worth wasting so many records that can help us generate a more accurate model so we have to choose another strategy to define what we are going to do with these null values.
+A strategy that is usually done in these cases to get a basic predictive model and leave the thought of a more advanced strategy for later is to use the average of the variable. Let&rsquo;s look at the age distribution.</p>
+<p><img src="https://miro.medium.com/max/592/1*AYs6lljz-gC-kCryz1ITCQ.png" alt="dist">
+<img src="https://miro.medium.com/max/291/1*cAicX8ShhATLHghJ6ol0UQ.png" alt="mean"></p>
+<p>We see that the average age within the data set is around 29 years old, so with this data we can take as a strategy to fill in the nulls with this value.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+train[<span style="color:#e6db74">&#39;Age&#39;</span>]<span style="color:#f92672">.</span>fillna(value <span style="color:#f92672">=</span> train[<span style="color:#e6db74">&#39;Age&#39;</span>]<span style="color:#f92672">.</span>mean(), inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+test[<span style="color:#e6db74">&#39;Age&#39;</span>]<span style="color:#f92672">.</span>fillna(value <span style="color:#f92672">=</span> test[<span style="color:#e6db74">&#39;Age&#39;</span>]<span style="color:#f92672">.</span>mean(), inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+
+</code></pre></div><p>To continue with the preparation of the data before training the model, we have to map the column Sex. Why do you have to do this? Because Machine Learning algorithms do not usually understand when we send them a text variable as input. Without going into detail about how they work internally, they take numerical values as inputs, so we are going to change the female and male registers to &lsquo;1&rsquo; and &lsquo;0&rsquo;.</p>
+<h2 id="fourth-step-training-the-model">Fourth Step: Training the model</h2>
+<p>Having the data ready to train the model, we proceed to import a very famous classification model called Random Forest Classifier. Which uses Decision Trees as a principle:</p>
+<p><img src="https://miro.medium.com/max/567/1*WWdaYXvioZhS6vw6FIAFqg.png" alt="dt"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> RandomForestClassifier
+
+features <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Age&#39;</span>, <span style="color:#e6db74">&#39;Sex&#39;</span>, <span style="color:#e6db74">&#39;Pclass&#39;</span>]
+
+model_clf <span style="color:#f92672">=</span> RandomForestClassifier()
+
+
+</code></pre></div><p>Having imported the model, we proceed to train it or you will also find that in the world of Machine Learning it is called fitting. We are going to be passing to the model our features with which we are going to train it and also the variable that we want it to predict.</p>
+<p><img src="https://miro.medium.com/max/700/1*8gyv3V_JJPRxIHrTG8LhGQ.png" alt="clf"></p>
+<p>When we run the fit we find that it returns the parameters with which the model was trained. These parameters can be changed to achieve a more precise model, for now we are going to train the model with default parameters.</p>
+<p>Now we can test the model and have a minimal idea of its accuracy, predict with our training data set and compare it against the real value that we have. With this prediction we observe the accuracy score of the basic model we made.</p>
+<p><img src="https://miro.medium.com/max/539/1*OSFCl6Xoor5cZR1MqKm9Lw.png" alt="accuracy"></p>
+<p>The model ended up returning almost 88% accuracy, which is very good for having put together a very basic model. <strong>But let&rsquo;s not forget that we are testing the model with the data set with which we train it, obviously when we upload our results to kaggle we will really know how good the model is.</strong></p>
+<h2 id="final-step-predicting-the-test-model">Final Step: Predicting the test model</h2>
+<p>Everything is very nice, but we will find the truth of the milanesa as soon as we try to predict the test set that we have separately. So first of all we are going to define a function that prepares the csv file that Kaggle asks for to make our submission.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upload_sub</span>(prediction, test_df):
+	output <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;PassengerId&#39;</span>: test_df[<span style="color:#e6db74">&#39;PassengerId&#39;</span>],
+						   <span style="color:#e6db74">&#39;Survived&#39;</span> : prediction})
+	output<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;my_sub.csv&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+
+
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+kaggle competitions submit -c titanic -f my_sub.csv -m test
+
+</code></pre></div><p>Now we enter the kaggle page and go to our competitions to see the scoring result assigned to us.</p>
+<p><img src="https://miro.medium.com/max/700/1*Idp-9vwBm7ONH_ioSw9acw.png" alt="score"></p>
+<p>A score too high for not having done much work on the data!</p>
+<p>I hope that this small demo has served to understand a very limited workflow in the world of DS.</p>
+<p><a href="https://github.com/rubzk/titanic-medium">I leave the github with the notebook for those who need it.</a></p>
+
+		</div>
+
+
+
+	</div>
+
+
+
+</div>
+
+		</main>
+
+	</div>
+</body><footer class="py-6  inset-x-0 bottom-0 flex justify-center text-white p-15 bg-black">
+	<div class="flex flex-col">
+
+		<div>
+
+			<span class="bg-white text-black font-bold p-2">copyright 2022 rubz. </span>
+
+		</div>
+
+
+
+		<div class="flex flex-row justify-between my-4">
+
+			<a href="mailto:tomas.ertola@gmail.com" target="_blank">
+
+				<svg class="h5 w-5 mr-4 transform transition-all hover:text-gray-500" fill="currentColor"
+					xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+					<path
+						d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-80.8 108.9L531.7 514.4c-7.8 6.1-18.7 6.1-26.5 0L189.6 268.9A7.2 7.2 0 0 1 194 256h648.8a7.2 7.2 0 0 1 4.4 12.9z" />
+				</svg>
+
+			</a>
+
+			<a href="https://twitter.com/theworldisdata" target="_blank">
+
+				<svg class="h5 w-5 mr-4 transform transition-all hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24" fill="currentColor">
+					<path
+						d="M23.643 4.937c-.835.37-1.732.62-2.675.733a4.67 4.67 0 0 0 2.048-2.578a9.3 9.3 0 0 1-2.958 1.13a4.66 4.66 0 0 0-7.938 4.25a13.229 13.229 0 0 1-9.602-4.868c-.4.69-.63 1.49-.63 2.342A4.66 4.66 0 0 0 3.96 9.824a4.647 4.647 0 0 1-2.11-.583v.06a4.66 4.66 0 0 0 3.737 4.568a4.692 4.692 0 0 1-2.104.08a4.661 4.661 0 0 0 4.352 3.234a9.348 9.348 0 0 1-5.786 1.995a9.5 9.5 0 0 1-1.112-.065a13.175 13.175 0 0 0 7.14 2.093c8.57 0 13.255-7.098 13.255-13.254c0-.2-.005-.402-.014-.602a9.47 9.47 0 0 0 2.323-2.41l.002-.003z" />
+				</svg>
+			</a>
+
+
+			<a href="https://www.linkedin.com/in/tomas-ertola/" target="_blank">
+
+				<svg class="h5 w-5 mr-4 transform transition-all hover:text-gray-500" fill="currentColor"
+					xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+					<path
+						d="M196.064.25C88.347.25.187 88.408.187 196.127v607.841c0 107.717 88.158 195.845 195.877 195.845h607.841c107.718 0 195.845-88.127 195.845-195.845V196.127C999.75 88.41 911.623.25 803.905.25H196.064zm49.266 164.948c51.648 0 83.461 33.906 84.443 78.475c0 43.585-32.797 78.444-85.442 78.444h-.969c-50.665 0-83.412-34.857-83.412-78.444c0-44.568 33.738-78.475 85.379-78.475zm445.08 208.31c99.329 0 173.79 64.922 173.79 204.436v260.449H713.247V595.406c0-61.06-21.847-102.718-76.476-102.718c-41.704 0-66.562 28.078-77.476 55.202c-3.987 9.704-4.967 23.257-4.967 36.832v253.671H403.375s1.981-411.613 0-454.233h150.984v64.324c20.06-30.95 55.942-74.977 136.051-74.977zm-521.556 10.685h150.953v454.202H168.854V384.193z">
+				</svg>
+
+
+			</a>
+
+		</div>
+
+	</div>
+
+</footer></html>

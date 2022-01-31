@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming, python, machine-learning on rubz.dev</title>
+    <link>http://rubzk.github.io/tags/programming-python-machine-learning/</link>
+    <description>Recent content in programming, python, machine-learning on rubz.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Jun 2020 19:21:50 +0100</lastBuildDate><atom:link href="http://rubzk.github.io/tags/programming-python-machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Intro to Machine Learning for begginners</title>
+      <link>http://rubzk.github.io/posts/intro-to-machine-learning/</link>
+      <pubDate>Mon, 29 Jun 2020 19:21:50 +0100</pubDate>
+      
+      <guid>http://rubzk.github.io/posts/intro-to-machine-learning/</guid>
+      <description>Following advice from leaders in the world of DS (Data Science) in Argentina, I decided to look for an old notebook that I had made to practice and write a short article that may help someone understand what is done in data science or able to introduce someone who has not the slightest idea in basic concepts.
+Summary What we are going to be doing throughout the post is through a dataset (Dataset) provided by one of the kaggle competitions, we are going to first carry out a brief analysis of the information we have and then carry out a predictive model that identifies according to certain variables that the data set has if the person survived or not.</description>
+    </item>
+    
+  </channel>
+</rss>
