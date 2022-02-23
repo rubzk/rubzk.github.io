@@ -6,14 +6,33 @@
     <description>Recent content in programming on rubz.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Jan 2022 00:19:32 +0100</lastBuildDate><atom:link href="http://rubzk.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Oct 2021 00:19:32 +0100</lastBuildDate><atom:link href="http://rubzk.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Creating machine learning playlist with spotify</title>
-      <link>http://rubzk.github.io/posts/test/</link>
-      <pubDate>Sat, 29 Jan 2022 00:19:32 +0100</pubDate>
+      <title>How to get through an Data Analyst/Scientist Interview Part 1</title>
+      <link>http://rubzk.github.io/posts/how-to-get-through-data-analyst-interview/</link>
+      <pubDate>Wed, 27 Oct 2021 00:19:32 +0100</pubDate>
       
-      <guid>http://rubzk.github.io/posts/test/</guid>
+      <guid>http://rubzk.github.io/posts/how-to-get-through-data-analyst-interview/</guid>
+      <description>When I was a teenager I was very bad at studying, in high school there was not a year where I did not go to summer school and in general the habit of studying annoyed me. But years later, when I entered college, I realized that it wasn&amp;rsquo;t that I hated studying, I hated what I believed back then to be studying. I used to think that studying was sitting down and reading the book or the summaries that I have written on the subject thousands of times.</description>
+    </item>
+    
+    <item>
+      <title>Creating Spotify Playlist with Machine Learning</title>
+      <link>http://rubzk.github.io/posts/creating-spotify-playlist-with-ml/</link>
+      <pubDate>Sun, 23 Aug 2020 15:20:44 -0300</pubDate>
+      
+      <guid>http://rubzk.github.io/posts/creating-spotify-playlist-with-ml/</guid>
       <description>Have you ever wondered how companies or Apps do to recommend moderately successful content to what we are consuming? When I asked myself this question I thought that obviously they must have a lot of information about their products such as Mercado Libre or Amazon: Product categories, weight, our purchase and search history, which product is usually bought together with another and so we can continue thinking of variables that could help recommend a product to a potential buyer.</description>
+    </item>
+    
+    <item>
+      <title>Intro to Machine Learning for begginners</title>
+      <link>http://rubzk.github.io/posts/intro-to-machine-learning/</link>
+      <pubDate>Mon, 29 Jun 2020 19:21:50 +0100</pubDate>
+      
+      <guid>http://rubzk.github.io/posts/intro-to-machine-learning/</guid>
+      <description>Following advice from leaders in the world of DS (Data Science) in Argentina, I decided to look for an old notebook that I had made to practice and write a short article that may help someone understand what is done in data science or able to introduce someone who has not the slightest idea in basic concepts.
+Summary What we are going to be doing throughout the post is through a dataset (Dataset) provided by one of the kaggle competitions, we are going to first carry out a brief analysis of the information we have and then carry out a predictive model that identifies according to certain variables that the data set has if the person survived or not.</description>
     </item>
     
   </channel>

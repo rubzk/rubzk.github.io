@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>clustering on rubz.dev</title>
+    <link>http://rubzk.github.io/tags/clustering/</link>
+    <description>Recent content in clustering on rubz.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Aug 2020 15:20:44 -0300</lastBuildDate><atom:link href="http://rubzk.github.io/tags/clustering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating Spotify Playlist with Machine Learning</title>
+      <link>http://rubzk.github.io/posts/creating-spotify-playlist-with-ml/</link>
+      <pubDate>Sun, 23 Aug 2020 15:20:44 -0300</pubDate>
+      
+      <guid>http://rubzk.github.io/posts/creating-spotify-playlist-with-ml/</guid>
+      <description>Have you ever wondered how companies or Apps do to recommend moderately successful content to what we are consuming? When I asked myself this question I thought that obviously they must have a lot of information about their products such as Mercado Libre or Amazon: Product categories, weight, our purchase and search history, which product is usually bought together with another and so we can continue thinking of variables that could help recommend a product to a potential buyer.</description>
+    </item>
+    
+  </channel>
+</rss>

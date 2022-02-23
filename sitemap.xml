@@ -9,12 +9,6 @@
     <lastmod>2021-11-15T20:14:21+01:00</lastmod>
     <priority>0</priority>
   </url><url>
-    <loc>http://rubzk.github.io/categories/</loc>
-    <lastmod>2021-11-15T20:14:21+01:00</lastmod>
-  </url><url>
-    <loc>http://rubzk.github.io/categories/philosophy/</loc>
-    <lastmod>2021-11-15T20:14:21+01:00</lastmod>
-  </url><url>
     <loc>http://rubzk.github.io/quotes/</loc>
     <lastmod>2021-11-15T20:14:21+01:00</lastmod>
   </url><url>
@@ -30,25 +24,34 @@
     <loc>http://rubzk.github.io/posts/how-to-get-through-data-analyst-interview/</loc>
     <lastmod>2021-10-27T00:19:32+01:00</lastmod>
   </url><url>
+    <loc>http://rubzk.github.io/tags/interviews/</loc>
+    <lastmod>2021-10-27T00:19:32+01:00</lastmod>
+  </url><url>
     <loc>http://rubzk.github.io/posts/</loc>
     <lastmod>2021-10-27T00:19:32+01:00</lastmod>
   </url><url>
-    <loc>http://rubzk.github.io/tags/programming.-interviews-sql/</loc>
+    <loc>http://rubzk.github.io/tags/programming/</loc>
+    <lastmod>2021-10-27T00:19:32+01:00</lastmod>
+  </url><url>
+    <loc>http://rubzk.github.io/tags/python/</loc>
+    <lastmod>2021-10-27T00:19:32+01:00</lastmod>
+  </url><url>
+    <loc>http://rubzk.github.io/tags/sql/</loc>
     <lastmod>2021-10-27T00:19:32+01:00</lastmod>
   </url><url>
     <loc>http://rubzk.github.io/tags/</loc>
     <lastmod>2021-10-27T00:19:32+01:00</lastmod>
   </url><url>
-    <loc>http://rubzk.github.io/posts/testing-the-post-page/</loc>
+    <loc>http://rubzk.github.io/tags/clustering/</loc>
     <lastmod>2020-08-23T15:20:44-03:00</lastmod>
   </url><url>
-    <loc>http://rubzk.github.io/tags/programming-python/</loc>
+    <loc>http://rubzk.github.io/posts/creating-spotify-playlist-with-ml/</loc>
     <lastmod>2020-08-23T15:20:44-03:00</lastmod>
   </url><url>
     <loc>http://rubzk.github.io/posts/intro-to-machine-learning/</loc>
     <lastmod>2020-06-29T19:21:50+01:00</lastmod>
   </url><url>
-    <loc>http://rubzk.github.io/tags/programming-python-machine-learning/</loc>
+    <loc>http://rubzk.github.io/tags/machine-learning/</loc>
     <lastmod>2020-06-29T19:21:50+01:00</lastmod>
   </url><url>
     <loc>http://rubzk.github.io/books/</loc>
