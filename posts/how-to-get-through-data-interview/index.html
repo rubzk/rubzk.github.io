@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html><head>
+         <meta charset="utf-8">
+		 <meta name="viewport" content="width=device.width, initial-scale=1">
+		 
+		 <title> rubz.dev </title>
+		 
+		 <link rel="preconnect" href="https://fonts.googleapis.com">
+		 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+		 
+		  
+		 
+		 
+		 
+		 
+		 <link rel="stylesheet" href="/css/main.min.9e4f848ac6530b52e56b52c0f436a82b81e39d1221e44c8eb760e16f06c4036a.css" integrity="sha256-nk+EisZTC1Lla1LA9DaoK4HjnRIh5EyOt2DhbwbEA2o=">
+		 
+
+		
+  </head>
+
+<body>
+	<div class="main"><nav class="bg-black border-b-2 fixed inset-x-0 top-0">
+	<div class="px-8 mx-10-xl sm:mx-10">
+		<div class="flex justify-between">
+			<div class="flex space-x-4 m-2">
+				<a href="/" class="flex items-center">
+					<svg class=" text-white h-6 w-6 md:h-6 md:w-6 mr-2" xmlns="http://www.w3.org/2000/svg"
+						class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+					</svg>
+					<span class="text-white font-bold"> rubz.dev </span>
+				</a>
+			</div>
+			<div class="hidden md:flex  space-x-4 m-2 text-white font-semibold">
+
+				<a class="hover:bg-white hover:text-black" href="/about">about</a>
+				<a class="hover:bg-white hover:text-black" href="/posts">posts</a>
+			</div>
+
+			<div class="md:hidden text-white flex ">
+				<button class="mobile-menu-btn">
+
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+						stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+					</svg>
+
+				</button>
+			</div>
+
+
+		</div>
+		<div class="mobile-menu hidden text-white flex-col font-bold">
+			<a class="block py-4  hover:text-gray-500 " href="/about">about</a>
+			<a class="block py-4  hover:text-gray-500" href="/posts">posts</a>
+
+		</div>
+		<div>
+
+			<script>
+				const btn = document.querySelector('button.mobile-menu-btn');
+				const menu = document.querySelector('.mobile-menu')
+
+
+				btn.addEventListener('click', () => {
+					menu.classList.toggle('hidden');
+				});
+			</script>
+</nav><main>
+<div class="flex flex-row  min-h-screen  justify-center">
+
+
+	<div class="flex flex-col w-full justify-center items-center">
+
+		<header class="text-black pt-16 pb-12  p-2 w-128">
+			<div class="py-2">
+				<span class="bg-black md:text-2xl text-white font-semibold p-1">
+					October 27,2021</span>
+
+			</div>
+			<h1 class="text-2xl md:text-6xl font-bold"> How to get through an Data Interview Part 1 </h1>
+			<div class="flex flex-row pt-4">
+
+				<div>
+					
+					<a class="p-1 text-xs mr-1 md:text-xl bg-black font-bold text-white" href="/tags/sql">sql</a>
+					
+				</div>
+
+				<p class="p-1 mr -1 text-xs mr-4 md:text-xl font-bold">
+					Reading time: 9m
+				</p>
+			</div>
+
+		</header>
+
+		<div class="prose lg:prose-xl  md:p-4 w-full p-3">
+			<p><img src="https://miro.medium.com/max/1400/1*RvpAxjhHbhJZb71G24uG3A.png" alt="stress"></p>
+<p>When I was a teenager I was very bad at studying, in high school there was not a year where I did not go to summer school  and in general the habit of studying annoyed me. But years later, when I entered college, I realized that it wasn&rsquo;t that I hated studying, I hated what I believed back then to be studying. I used to think that studying was sitting down and reading the book or the summaries that I have written on the subject thousands of times. My definition was wrong but luckily I realized that it was not necessary to devote so much time to study but that you had to study in a more intelligent way, study smarter not harder.</p>
+<p>What&rsquo;s this all about? Well, during the last month, as a result of my move to Spain, I knew that I was going to face many selection processes and I had to prepare different topics for each step of the process. So following the cliché phrase that I named moments ago, I decided to plan how to diagram each topic that can appear in a data interview and now that this apocalyptic month (of many interviews) is over, I can put together a series of posts to talk about the different processes of selection, what kind of questions you can find and where I can prepare each part of the interview.</p>
+<p>For a better organization I divided the material into different parts, in this first one I will be focusing more on the description of the selection process and on the SQL part.</p>
+<p>The posting roadmap would be as follows:</p>
+<ol>
+<li><strong>Part 1: Journey of the selection process + SQL</strong></li>
+<li><strong>Part 2: Programming + Machine Learning + Stats</strong></li>
+<li><strong>Part 3: Metrics/Business + Business Case</strong></li>
+</ol>
+<h2 id="journey-of-the-selection-process-and-its-variations">Journey of the selection process and its variations:</h2>
+<p>Before starting, what is a journey? Well, it&rsquo;s not something that complicated, journey is a buzzword that has been romanized and is basically used to describe any process that takes a series of steps. A selection process can take both a single interview or as many variations as the company wants to measure the skills of the candidate in the face of the tasks that they will fulfill within the role (Spoiler: These are not day-to-day tasks).</p>
+<p>Depending on the position, these processes usually vary, but in an ideal world, a selection process would look like this.</p>
+<p><img src="https://i.imgur.com/CMg2Jlq.png" alt="interview"></p>
+<p>The problem arises when reality shows variations in these processes because each company adjusts it to their needs&hellip;</p>
+<p><img src="https://i.imgur.com/pdftqLn.png" alt="interview2"></p>
+<p>And there are some companies that even abuse the time of a candidate:</p>
+<p><img src="https://i.imgur.com/o9vtESq.png" alt="interview3"></p>
+<p>Now leaving aside the irony (and my hatred of long processes), let&rsquo;s focus on what do they usually evaluate at each step. What kind of tests can we find in the process? and how to prepare them?</p>
+<h2 id="hr-screening">HR Screening</h2>
+<p>In this interview, most of the time it is with an HR person who asks a series of questions to get to know the person, observe their experience, evaluate certain soft skills and even in some cases ask some very high-level technical questions to apply a finer filter in the first stage.</p>
+<p>My advice for this stage is to put together some presentation lines and order the tasks you were working on the last time. If you don&rsquo;t have experience, don&rsquo;t lie, talk about the personal projects you did and finally always add a comment regarding extra-work activities you do in your free time. It is a presentation to the front door of the company, there is not much science, be yourself. On the other hand, if you are  a psychopath,  you  will have to lie (lol)</p>
+<p>A question may arise as to how they solved a difficult situation at work or in life in general, a good friend of mine who works in HR would recommend that they use the STAR method (Situation, Task, Action, Result)</p>
+<h2 id="sql-test">SQL Test</h2>
+<p>Outside of the task that you are going to perform in the company, if you cannot obtain the data, you are in trouble. And this is something that sometimes new joiners to the field take for granted and do not practice. We are at a time that  Data Science courses are at their peak, they spend a large part of the course talking about Python, its libraries, its beautiful algorithms, neural networks, blablablabla, but they do not focus on the importance of this first step, which is to <em><strong>obtain the data</strong></em>.</p>
+<h3 id="there-are-two-ways-to-evaluate-sql">There are two ways to evaluate SQL:</h3>
+<ul>
+<li>
+<p><strong>Live Coding:</strong> This is usually an interview with a person from the team in which questions about SQL are asked and practical exercises are evaluated on the spot.</p>
+</li>
+<li>
+<p><strong>Homework Challenge:</strong> They usually send you a link to a platform like Hackerrank where you have some time to solve a number of SQL exercises.</p>
+</li>
+</ul>
+<p><em><strong>What high-level questions can we get asked? These are some of the ones that I was able to collect recently, they are often repeated quite a bit.</strong></em></p>
+<ul>
+<li>
+<p><em>What SQL syntax is used together with the SELECT so that the query returns unique values?</em></p>
+</li>
+<li>
+<p><em>Name three <strong>types of JOINS</strong> and explain their differences (Or else they make you explain all JOINS)</em></p>
+</li>
+<li>
+<p><em>What is the difference between <strong>WHERE</strong> and <strong>HAVING</strong>?</em></p>
+</li>
+<li>
+<p><em>What is a <strong>Primary Key</strong>? And a <strong>Foreign Key</strong>?</em></p>
+</li>
+<li>
+<p><em>How would you optimize a query?</em></p>
+</li>
+<li>
+<p><em>What is a <strong>Window Function</strong> and what advantages does it have?</em></p>
+</li>
+<li>
+<p><em>What is a <strong>CTE</strong>?</em></p>
+</li>
+</ul>
+<p>My idea is not to explain the answers, google is free and <em><strong>knowing how to google is the most important skill in any job I would say</strong></em>. It is to give you an idea of what may appear.</p>
+<p>Now moving on to the practical part of this type of interview, the interviewee is usually presented with a table or a table scheme and is asked a series of questions in which the query must be written.</p>
+<p><strong>Note:</strong> Not only the query you wrote is evaluated, but also how you explained as you write, what questions you ask and how you approach the problem.</p>
+<p><img src="https://miro.medium.com/max/475/1*8EKfYiNgRgDzz795bTs_3A.png" alt="exmaple"></p>
+<p>It is usual to go from least to most complex in these tests, to observe the number of problems that the candidate can solve in a given time. <em><strong>If you did not solve everything, it does not mean that you failed, it is just a diagnosis of the level you have.</strong></em></p>
+<p><strong>How many areas does the company have?</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">SELECT</span> DISINTCT(<span style="color:#66d9ef">COUNT</span>(area))
+<span style="color:#66d9ef">FROM</span> employees
+
+</code></pre></div><p><strong>What is the area with the highest average salary?</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">SELECT</span> e.area
+<span style="color:#66d9ef">FROM</span> employees e
+<span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> salaries s 
+<span style="color:#66d9ef">ON</span> e.id <span style="color:#f92672">=</span> s.employee_id
+<span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> e.area
+<span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#66d9ef">AVG</span>(s.salary) <span style="color:#66d9ef">DESC</span>
+<span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">1</span>;
+
+</code></pre></div><p><strong>What is the top 5 employees with the highest salary?</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">SELECT</span> e.name,
+       e.salary
+<span style="color:#66d9ef">FROM</span> employees e
+<span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> salaries s
+<span style="color:#66d9ef">ON</span> e.id <span style="color:#f92672">=</span> s.employee_id
+<span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> e.salary <span style="color:#66d9ef">DESC</span>;
+
+</code></pre></div><p><strong>Query the list of areas (excluding the IT area) that earn at least more than $40,000 average</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">SELECT</span> e.area
+<span style="color:#66d9ef">FROM</span> employees e
+<span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> salaries s
+<span style="color:#66d9ef">ON</span> e.id <span style="color:#f92672">=</span> s.employee_id
+<span style="color:#66d9ef">WHERE</span> e.area <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;IT&#39;</span>
+<span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> e.area
+<span style="color:#66d9ef">HAVING</span> <span style="color:#66d9ef">AVG</span>(e.salary) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">40000</span>
+
+</code></pre></div><p><strong>Query the employee who earns the most from each area</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">
+<span style="color:#66d9ef">WITH</span> cte <span style="color:#66d9ef">AS</span>(
+<span style="color:#66d9ef">SELECT</span> e.area <span style="color:#66d9ef">as</span> area,
+       e.name <span style="color:#66d9ef">as</span> employee,
+       s.salary,
+       DENSE_RANK() OVER(PARTITION <span style="color:#66d9ef">BY</span> e.area <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> e.salary <span style="color:#66d9ef">DESC</span>) <span style="color:#66d9ef">as</span> rk
+<span style="color:#66d9ef">FROM</span> employees e
+<span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> salaries s
+<span style="color:#66d9ef">ON</span> e.id <span style="color:#f92672">=</span> s.employee_id
+<span style="color:#66d9ef">WHERE</span> e.name <span style="color:#66d9ef">IS</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>
+)
+<span style="color:#66d9ef">SELECT</span> area,
+       employee,
+       salary
+<span style="color:#66d9ef">FROM</span> cte
+<span style="color:#66d9ef">WHERE</span> rk <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+
+</code></pre></div><p>Another mixed problem that can appear in this type of interview is that the interviewer presents the framework of a problem, shows the query that is being used and asks the candidate: <strong>What errors do you notice in the query? How would you optimize it?</strong></p>
+<h2 id="resources-to-study">Resources to study</h2>
+<p>If you have a very basic level of SQL and have not yet used it  in a job, I recommend starting by reviewing the fundamentals of queries. I invite you to spend a few hours reading <a href="https://www.w3schools.com/sql/">W3Schools</a> and <a href="https://www.learnsqlonline.org/">LearnSQL</a>.</p>
+<p>When you feel confident enough and able to read a basic query on your own and understand  it, you can move on to <a href="http://www.hackerrank.com/">HackerRank</a> or <a href="https://leetcode.com/">LeetCode</a> exercises.</p>
+<p><img src="https://miro.medium.com/max/700/1*212ImEJ2Sx6WuEPNUY9Jig.png" alt="hackerang"></p>
+<p>The two websites are very similar, they have many problems to solve with a statement and an IDE to be able to carry out the queries and even test the results. We can also find a forum tab where other users discuss how to solve the problem.</p>
+<p>My humble opinion regarding this is that you try to solve it yourself or at least give yourself some time to try to solve it on your own, if some time passes and you don&rsquo;t know what you are doing wrong, consult the solutions left by other users and understand what they are doing. <strong>Reading and understanding is a part of learning</strong>*</p>
+<p><em>Another way to continue exercising is a simple search on youtube&hellip;</em></p>
+<p><img src="https://miro.medium.com/max/700/1*2JUXKRgY2CZhSMbFeAaaVQ.png" alt="yt"></p>
+<p>As you will see there is a lot of content about questions and exercises that you can find in a SQL technical test. Many people film themselves doing mock-interviews (Tests) and document their mental process to carry them out. I recommend that as you watch them, try to do some of these questions or exercises on your own by stopping the video. Personally, I suggest the videos on the <a href="https://www.youtube.com/watch?v=pJeGiUTWi1s&amp;list=PLY1Fi4XflWStFs6tLQ3Gey2Aaq_U4-Xnc&amp;index=9">Data Interview Pro</a> channel, they usually cover a wide range of examples and the explanation is very didactic for me.</p>
+<p>Finally, one last alternative that I am going to present to you: We all have a Google account (If you don&rsquo;t have it, you are a psychopath) and this Google account allows us to access a Free-tier of 300USD in Google Cloud where we have the platform of Google for SQL, <strong>BigQuery</strong>.</p>
+<p><img src="https://miro.medium.com/max/700/1*lv3DIvJsCFIyaZjt2zbM-Q.png" alt="Bq"></p>
+<p>It allows us to load our own dataset or explore the public ones. We can make our queries and see the results and it is quite friendly for anyone and a plus is that they can already add to the CV that they know how to use BigQuery (Yes, I know that you want to add it).</p>
+<hr>
+<p>To conclude with this first post I would like to point out that as you will have read throughout the post it does not seem like something very difficult to do if you prepare yourself correctly, remember <em><strong>study smarter not harder</strong></em>. But now the million dollar question, <strong>what is the best way to prepare?</strong></p>
+<p>Unfortunately I do not have that answer and it is an introspection that you will have to do or perhaps you have already done it. Each person is a different world, there are people who absorb more when they practice, others when they read and some when they observe another perform the problems. Try, fail, reflect and try again, it is the only way to know what suits each one better.</p>
+<p>So I wish you the best of luck in your preparation for a dating job interview. I am already preparing the second part where we are going to talk a little about what to expect in the code/machine learning part.</p>
+<p>Any questions, help or error <em>(Yes, sometimes I&rsquo;m wrong)</em> feel free to contact me.</p>
+
+		</div>
+
+
+
+	</div>
+
+
+
+</div>
+
+		</main>
+
+	</div>
+</body><footer class="py-6  inset-x-0 bottom-0 flex justify-center text-white p-15 bg-black">
+	<div class="flex flex-col">
+
+		<div>
+
+			<span class="bg-white text-black font-bold p-2">copyright 2022 rubz. </span>
+
+		</div>
+
+
+
+		<div class="flex flex-row justify-between my-4">
+
+			<a href="mailto:tomas.ertola@gmail.com" target="_blank">
+
+				<svg class="h5 w-5 mr-4 transform transition-all hover:text-gray-500" fill="currentColor"
+					xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+					<path
+						d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-80.8 108.9L531.7 514.4c-7.8 6.1-18.7 6.1-26.5 0L189.6 268.9A7.2 7.2 0 0 1 194 256h648.8a7.2 7.2 0 0 1 4.4 12.9z" />
+				</svg>
+
+			</a>
+
+			<a href="https://twitter.com/theworldisdata" target="_blank">
+
+				<svg class="h5 w-5 mr-4 transform transition-all hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24" fill="currentColor">
+					<path
+						d="M23.643 4.937c-.835.37-1.732.62-2.675.733a4.67 4.67 0 0 0 2.048-2.578a9.3 9.3 0 0 1-2.958 1.13a4.66 4.66 0 0 0-7.938 4.25a13.229 13.229 0 0 1-9.602-4.868c-.4.69-.63 1.49-.63 2.342A4.66 4.66 0 0 0 3.96 9.824a4.647 4.647 0 0 1-2.11-.583v.06a4.66 4.66 0 0 0 3.737 4.568a4.692 4.692 0 0 1-2.104.08a4.661 4.661 0 0 0 4.352 3.234a9.348 9.348 0 0 1-5.786 1.995a9.5 9.5 0 0 1-1.112-.065a13.175 13.175 0 0 0 7.14 2.093c8.57 0 13.255-7.098 13.255-13.254c0-.2-.005-.402-.014-.602a9.47 9.47 0 0 0 2.323-2.41l.002-.003z" />
+				</svg>
+			</a>
+
+
+			<a href="https://www.linkedin.com/in/tomas-ertola/" target="_blank">
+
+				<svg class="h5 w-5 mr-4 transform transition-all hover:text-gray-500" fill="currentColor"
+					xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+					<path
+						d="M196.064.25C88.347.25.187 88.408.187 196.127v607.841c0 107.717 88.158 195.845 195.877 195.845h607.841c107.718 0 195.845-88.127 195.845-195.845V196.127C999.75 88.41 911.623.25 803.905.25H196.064zm49.266 164.948c51.648 0 83.461 33.906 84.443 78.475c0 43.585-32.797 78.444-85.442 78.444h-.969c-50.665 0-83.412-34.857-83.412-78.444c0-44.568 33.738-78.475 85.379-78.475zm445.08 208.31c99.329 0 173.79 64.922 173.79 204.436v260.449H713.247V595.406c0-61.06-21.847-102.718-76.476-102.718c-41.704 0-66.562 28.078-77.476 55.202c-3.987 9.704-4.967 23.257-4.967 36.832v253.671H403.375s1.981-411.613 0-454.233h150.984v64.324c20.06-30.95 55.942-74.977 136.051-74.977zm-521.556 10.685h150.953v454.202H168.854V384.193z">
+				</svg>
+
+
+			</a>
+
+		</div>
+
+	</div>
+
+</footer></html>

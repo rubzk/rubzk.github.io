@@ -6,20 +6,11 @@
     <description>Recent content in Tags on rubz.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Oct 2021 00:19:32 +0100</lastBuildDate><atom:link href="http://rubzk.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>interviews</title>
-      <link>http://rubzk.github.io/tags/interviews/</link>
-      <pubDate>Wed, 27 Oct 2021 00:19:32 +0100</pubDate>
-      
-      <guid>http://rubzk.github.io/tags/interviews/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Thu, 09 Dec 2021 18:51:19 +0100</lastBuildDate><atom:link href="http://rubzk.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>programming</title>
       <link>http://rubzk.github.io/tags/programming/</link>
-      <pubDate>Wed, 27 Oct 2021 00:19:32 +0100</pubDate>
+      <pubDate>Thu, 09 Dec 2021 18:51:19 +0100</pubDate>
       
       <guid>http://rubzk.github.io/tags/programming/</guid>
       <description></description>
@@ -28,9 +19,18 @@
     <item>
       <title>python</title>
       <link>http://rubzk.github.io/tags/python/</link>
-      <pubDate>Wed, 27 Oct 2021 00:19:32 +0100</pubDate>
+      <pubDate>Thu, 09 Dec 2021 18:51:19 +0100</pubDate>
       
       <guid>http://rubzk.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stats</title>
+      <link>http://rubzk.github.io/tags/stats/</link>
+      <pubDate>Thu, 09 Dec 2021 18:51:19 +0100</pubDate>
+      
+      <guid>http://rubzk.github.io/tags/stats/</guid>
       <description></description>
     </item>
     

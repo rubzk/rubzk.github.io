@@ -6,7 +6,16 @@
     <description>Recent content on rubz.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Nov 2021 20:14:21 +0100</lastBuildDate><atom:link href="http://rubzk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Dec 2021 18:51:19 +0100</lastBuildDate><atom:link href="http://rubzk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Get Through Data Interview Part 2</title>
+      <link>http://rubzk.github.io/posts/how-to-get-through-data-interview-pt2/</link>
+      <pubDate>Thu, 09 Dec 2021 18:51:19 +0100</pubDate>
+      
+      <guid>http://rubzk.github.io/posts/how-to-get-through-data-interview-pt2/</guid>
+      <description>Continuing with the series of posts that I am putting together about the selection processes in the world of data, I leave here this second part focused on the evaluations of statistics, programming and machine learning. Everything you are going to read is subject to a compilation of personal experiences, talks with colleagues and the Internet. There is no exact formula but I hope I can provide you with a skeleton of how the different parts are evaluated.</description>
+    </item>
+    
     <item>
       <title>Opensource</title>
       <link>http://rubzk.github.io/opensource/</link>
@@ -45,11 +54,11 @@ more complete bio: My name is Tomas, the spaninsh version of Thomas, I was borne
     </item>
     
     <item>
-      <title>How to get through an Data Analyst/Scientist Interview Part 1</title>
-      <link>http://rubzk.github.io/posts/how-to-get-through-data-analyst-interview/</link>
+      <title>How to get through an Data Interview Part 1</title>
+      <link>http://rubzk.github.io/posts/how-to-get-through-data-interview/</link>
       <pubDate>Wed, 27 Oct 2021 00:19:32 +0100</pubDate>
       
-      <guid>http://rubzk.github.io/posts/how-to-get-through-data-analyst-interview/</guid>
+      <guid>http://rubzk.github.io/posts/how-to-get-through-data-interview/</guid>
       <description>When I was a teenager I was very bad at studying, in high school there was not a year where I did not go to summer school and in general the habit of studying annoyed me. But years later, when I entered college, I realized that it wasn&amp;rsquo;t that I hated studying, I hated what I believed back then to be studying. I used to think that studying was sitting down and reading the book or the summaries that I have written on the subject thousands of times.</description>
     </item>
     

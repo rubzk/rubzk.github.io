@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>stats on rubz.dev</title>
+    <link>http://rubzk.github.io/tags/stats/</link>
+    <description>Recent content in stats on rubz.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Dec 2021 18:51:19 +0100</lastBuildDate><atom:link href="http://rubzk.github.io/tags/stats/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Get Through Data Interview Part 2</title>
+      <link>http://rubzk.github.io/posts/how-to-get-through-data-interview-pt2/</link>
+      <pubDate>Thu, 09 Dec 2021 18:51:19 +0100</pubDate>
+      
+      <guid>http://rubzk.github.io/posts/how-to-get-through-data-interview-pt2/</guid>
+      <description>Continuing with the series of posts that I am putting together about the selection processes in the world of data, I leave here this second part focused on the evaluations of statistics, programming and machine learning. Everything you are going to read is subject to a compilation of personal experiences, talks with colleagues and the Internet. There is no exact formula but I hope I can provide you with a skeleton of how the different parts are evaluated.</description>
+    </item>
+    
+  </channel>
+</rss>
