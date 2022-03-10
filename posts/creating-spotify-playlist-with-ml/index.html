@@ -102,14 +102,14 @@
 		</header>
 
 		<div class="prose lg:prose-xl  md:p-4 w-full p-3">
-			<h2 id="have-you-ever-wondered-how-companies-or-apps-do-to-recommend-moderately-successful-content-to-what-we-are-consuming">Have you ever wondered how companies or Apps do to recommend moderately successful content to what we are consuming?</h2>
+			<h2 id="have-you-ever-wondered-how-companies-or-apps-do-to-recommend-moderately-successful-content">Have you ever wondered how companies or apps do to recommend moderately successful content?</h2>
 <p><img src="https://miro.medium.com/max/681/1*-pEHTlOdX_7mlvzk3UUHPQ.png" alt="img"></p>
-<p>When I asked myself this question I thought that obviously they must have a lot of information about their products such as Mercado Libre or Amazon: Product categories, weight, our purchase and search history, which product is usually bought together with another and so we can continue thinking of variables that could help recommend a product to a potential buyer.</p>
-<p>But then I changed the focus of my thinking towards more intangible products such as music. Although music could be acquired in a tangible way in the form of CDs, we all know that today the music business does not work that way if not digitally. Several companies have emerged from this new business model and one of them is Spotify, which I think does not need to present it due to its wide popularity. Now going back to my previous thought, Spotify not only has our searches, playlists and most listened songs to be able to recommend new music to us, but it can also afford to perform an analysis of the music to find more features that lead to a better recommendation.</p>
+<p>When I asked myself this question I thought that obviously they must have a lot of information about their products such as Mercado Libre or Amazon: Product categories, weight, purchase and search history, which product is usually bought together with  and so we can continue thinking of variables that could help recommend a product to a potential buyer.</p>
+<p>But then I changed the focus of my thinking towards more intangible products such as music. Although music could be acquired in a tangible way in the form of CDs, we all know that today the music business does not work that way if not digitally. Several companies have emerged from this new business model and one of them is Spotify, which I think does not need to present it due to its wide popularity. Now going back to my previous thought, Spotify not only has our searches, playlists and most listened songs, but it can also afford to perform an analysis of the music to find more features that lead to a better recommendation.</p>
 <p><img src="https://miro.medium.com/max/1400/1*8-BtIdanLJEUtSKkoqSmAw.png" alt="img"></p>
 <p>Researching their official API, I found that they offer a request in which one can get the audio features of a song. There are several features that we obtain and they range from how instrumental the song is, how danceable, how energetic and among many more. I recommend that you enter yourself and see the large number of options that the API offers.</p>
 <hr>
-<p>Having found this functionality I came up with the following: use an unsupervised algorithm so that with all my lists, I generate different clusters according to the features of the API.</p>
+<p>Having found this functionality I came up with the following: <em><strong>use an unsupervised algorithm so that with all my lists, I generate different clusters according to the features of the API.</strong></em></p>
 <h2 id="first-step-create-keys-to-access-the-api">First Step: Create Keys to access the API</h2>
 <p>We start first with everything that would be the configuration to use the API. We go to the official website of the API and go to the dashboard section where it will ask us to register as developers. They register and right there we go to the option “Create an App”</p>
 <p>![img][https://miro.medium.com/max/894/1*Prkvi8VQTZL9Jh48mmYgAg.png]</p>
@@ -132,11 +132,11 @@ sp <span style="color:#f92672">=</span> spotipy<span style="color:#f92672">.</sp
 </code></pre></div><hr>
 <h2 id="second-step-extract-the-data-from-the-api-and-process-it">Second Step: Extract the data from the API and process it:</h2>
 <p>Now that we have the credentials loaded in the jupyter notebook, we can start making basic queries to see the API responses.
-I first thought that in order to extract all my songs I would have to be able to extract all my playlists. The get_user_playlist() function allows us to fetch all our playlists, with many specifications for each one.</p>
+I first thought that in order to extract all my songs I would have to be able to extract all my playlists. The <code>get_user_playlist()</code> function allows us to fetch all our playlists, with many specifications for each one.</p>
 <p><em><strong>Note:</strong></em> As you can see, I am going to show only the first result because if I paste the entire result, the post would take forever.</p>
 <p><code>sp.user_playlists('11101312700')['items'][0]</code></p>
 <p><img src="https://miro.medium.com/max/1400/1*yNhW5Sugcrm8wO8t38VpqQ.png" alt="img"></p>
-<p>As we can see, the API provides us with the details of each playlist that my user has, the most important data we need is the id to later use it in conjunction with the get_playlists_tracks() function</p>
+<p>As we can see, the API provides us with the details of each playlist that my user has, the most important data we need is the id to later use it in conjunction with the <code>get_playlists_tracks()</code> function</p>
 <p><code>sp.playlist_tracks('39ATQymddYN7NyYh9o1wJt')['items'][0]</code></p>
 <p><img src="https://miro.medium.com/max/1400/1*7WV-PrCVdfcAhbvKlkvx3w.png" alt="img"></p>
 <p>As a result, it returns all the tracks that the list has with all the information of each one. The most important thing would be missing&hellip; the audio features that I mentioned so much before and to get each of them there is a function called audio_features()</p>
@@ -186,11 +186,12 @@ I first thought that in order to extract all my songs I would have to be able to
 
 </code></pre></div><p>The result returns a Data Frame like this:</p>
 <p><img src="https://miro.medium.com/max/1400/1*lpwJhlSKYSFhhV7t3NixGA.png" alt="img"></p>
+<hr>
 <h2 id="third-step-data-clustering">Third Step: Data clustering:</h2>
-<p>As a name at the beginning of the post, my idea was to use an unsupervised algorithm, but what is this?</p>
-<p>Unsupervised learning is a technique used in machine learning where the algorithm feeds on our data set and the selected features to be able to cluster (divide into segments) according to some pattern found in the data. It feeds on “unlabeled” data, that is to say that in this case we are not trying to make the algorithm predict something, but to explore it by itself.</p>
+<p>As the name at the beginning of the post, my idea was to use an unsupervised algorithm, but what is this?</p>
+<p><em><strong>Unsupervised learning</strong></em> is a technique used in machine learning where the algorithm feeds on our data set and the selected features to be able to cluster (divide into segments) according to some pattern found in the data. It feeds on “unlabeled” data, that is to say that in this case we are not trying to make the algorithm predict something, but to explore it by itself.</p>
 <p><img src="https://miro.medium.com/max/1192/1*CSPfuqAIzu__DCNhuRw_DA.png" alt="img"></p>
-<p>One of the best known unsupervised algorithms is K-means, which is the one we will use in this post. But before continuing with the algorithm process I want to explain the features that I chose for this clustering.</p>
+<p>One of the best known unsupervised algorithms is <strong>K-means</strong>, which is the one we will use in this post. But before continuing with the algorithm process I want to explain the features that I chose for this clustering.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">features <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;danceability&#39;</span>,<span style="color:#e6db74">&#39;energy&#39;</span>,<span style="color:#e6db74">&#39;acousticness&#39;</span>
            ,<span style="color:#e6db74">&#39;instrumentalness&#39;</span>,<span style="color:#e6db74">&#39;valence&#39;</span>]
 </code></pre></div><p><em><strong>danceability:</strong></em> Describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is less danceable and 1.0 is more danceable.</p>
