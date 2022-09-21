@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>life on rubz.dev</title>
+    <link>http://rubzk.github.io/tags/life/</link>
+    <description>Recent content in life on rubz.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Mar 2022 18:49:08 +0100</lastBuildDate><atom:link href="http://rubzk.github.io/tags/life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>25 Things I Learned During My 25 Years</title>
+      <link>http://rubzk.github.io/posts/25-things-i-learned-during-my-25-years/</link>
+      <pubDate>Fri, 25 Mar 2022 18:49:08 +0100</pubDate>
+      
+      <guid>http://rubzk.github.io/posts/25-things-i-learned-during-my-25-years/</guid>
+      <description>Today I am turning 25. I can&amp;rsquo;t believe how fast time slips, without knowing you are completing a quarter of a century in this uncertain and strange quest of life. A few months ago I had this idea of writing lessons I had during this last 25 years. Not only to share them with people but also as a kind of time capsule for the future me. It&amp;rsquo;s going to be fun to read this in 10 or 20 years later and compare if something on this list had change.</description>
+    </item>
+    
+  </channel>
+</rss>
